@@ -1,7 +1,7 @@
 ---
 aliases: [index]
 date created: Friday, June 20th 2025, 10:58:44 am
-date modified: Friday, June 20th 2025, 5:07:48 pm
+date modified: Friday, June 20th 2025, 6:44:30 pm
 linter-yaml-title-alias: index
 tags: []
 title: index
@@ -11,5 +11,5 @@ title: index
 
 ### Systems Design
 
-1. [Systems Design Principles](Systems%20Design/Principles/Principles.md)
-2. [Interview Prep](Systems%20Design/Interview%20Prep/Interview%20Prep.md)
+1. [Systems Design Principles](Systems%20Design/Principles.md)
+2. [Interview Prep](Systems%20Design/Interview%20Prep.md)

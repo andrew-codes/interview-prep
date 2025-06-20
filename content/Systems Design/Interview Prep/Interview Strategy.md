@@ -1,7 +1,7 @@
 ---
 aliases: [Interview Strategy]
 date created: Friday, June 20th 2025, 9:44:27 am
-date modified: Friday, June 20th 2025, 5:14:14 pm
+date modified: Friday, June 20th 2025, 6:47:30 pm
 linter-yaml-title-alias: Interview Strategy
 tags: []
 title: Interview Strategy
@@ -56,11 +56,11 @@ Read to write ratio can be inferred from the system's intended purpose and prima
 From there, you can now formulate estimations for required resources.
 
 > [!TIP] Resource estimations
-> You may need to demonstrate estimation of these values by hand; such as QPS or storage sizes See [[Systems Design/Principles/Basics/Resource Estimation/Resource Estimation|Resource Estimation]] for a guide on doing this.
+> You may need to demonstrate estimation of these values by hand; such as QPS or storage sizes See [[Systems Design/Principles/Basics/Resource Estimation|Resource Estimation]] for a guide on doing this.
 
 ### Step 3: Design Goals
 
-Next, communicate the system's design goals. This includes goals relating to [[Systems Design/Principles/Basics/Non-Functional Requirements|non-functional requirements]]. These may be inferable from the system's domain. These derive directly from trade-offs found in the [[Systems Design/Principles/Principles|system design principles]].
+Next, communicate the system's design goals. This includes goals relating to [[Systems Design/Principles/Basics/Non-Functional Requirements|non-functional requirements]]. These may be inferable from the system's domain. These derive directly from trade-offs found in the [[Systems Design/Principles|system design principles]].
 
 If inferring, ensure you communicate your findings and validate the assumptions are correct before proceeding. Otherwise, ask for any specific goals the system should achieve.
 

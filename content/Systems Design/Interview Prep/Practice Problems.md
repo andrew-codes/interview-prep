@@ -1,10 +1,10 @@
 ---
-aliases: [Solutions]
+aliases: [Practice Problems]
 date created: Friday, June 20th 2025, 11:27:09 am
-date modified: Friday, June 20th 2025, 11:31:30 am
-linter-yaml-title-alias: Solutions
+date modified: Friday, June 20th 2025, 6:47:54 pm
+linter-yaml-title-alias: Practice Problems
 tags: []
-title: Solutions
+title: Practice Problems
 ---
 
 ## Sample Problems and Solutions
