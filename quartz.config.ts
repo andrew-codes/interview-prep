@@ -1,3 +1,4 @@
+import { D2 } from "./custom-plugins/d2"
 import { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
 
@@ -8,7 +9,7 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "Quartz 4",
+    pageTitle: "Engineering Interview Prep",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
@@ -16,8 +17,8 @@ const config: QuartzConfig = {
       provider: "plausible",
     },
     locale: "en-US",
-    baseUrl: "quartz.jzhao.xyz",
-    ignorePatterns: ["private", "templates", ".obsidian"],
+    baseUrl: "andrew-codes.github.io/interview-prep",
+    ignorePatterns: ["private", "templates", ".obsidian", "_scripts"],
     defaultDateType: "modified",
     theme: {
       fontOrigin: "googleFonts",
@@ -72,6 +73,7 @@ const config: QuartzConfig = {
       Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
       Plugin.Description(),
       Plugin.Latex({ renderEngine: "katex" }),
+      D2(),
     ],
     filters: [Plugin.RemoveDrafts()],
     emitters: [
