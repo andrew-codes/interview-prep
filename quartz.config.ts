@@ -1,3 +1,4 @@
+import { d2 } from "./custom-plugins/d2"
 import { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
 
@@ -72,6 +73,7 @@ const config: QuartzConfig = {
       Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
       Plugin.Description(),
       Plugin.Latex({ renderEngine: "katex" }),
+      d2(),
     ],
     filters: [Plugin.RemoveDrafts()],
     emitters: [
