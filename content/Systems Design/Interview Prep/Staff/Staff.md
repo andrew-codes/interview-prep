@@ -1,7 +1,7 @@
 ---
 aliases: [Staff]
 date created: Friday, June 20th 2025, 9:41:08 am
-date modified: Friday, June 20th 2025, 12:06:21 pm
+date modified: Friday, June 20th 2025, 5:15:31 pm
 linter-yaml-title-alias: Staff
 tags: []
 title: Staff
@@ -11,5 +11,5 @@ title: Staff
 
 This guide is intended for those interviewing for a staff engineering role.
 
-1. [Interview Strategy](../Interview%20Strategy.md)
-2. [Practice Problems and Solutions](../Solutions/Solutions.md)
+1. [[Systems Design/Interview Prep/Interview Strategy|Interview Strategy]]
+2. [[Systems Design/Interview Prep/Solutions/Solutions|Practice Problems and Solutions]]

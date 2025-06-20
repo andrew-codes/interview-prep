@@ -1,7 +1,7 @@
 ---
 aliases: [Resource Estimation]
 date created: Thursday, June 19th 2025, 12:07:35 pm
-date modified: Friday, June 20th 2025, 2:38:56 pm
+date modified: Friday, June 20th 2025, 5:14:39 pm
 linter-yaml-title-alias: Resource Estimation
 tags: []
 title: Resource Estimation
@@ -12,7 +12,7 @@ title: Resource Estimation
 These become increasingly important for infrastructure design questions; e.g. rate limiting and caching.
 
 > [!NOTE] Napkin Estimations
-> When performing "napkin estimations", focus on the answer's order of magnitude. The correct coefficient is not nearly as important as the correct exponent. See the [Napkin Estimates](Napkin%20Estimates.md) guide for more pointers.
+> When performing "napkin estimations", focus on the answer's order of magnitude. The correct coefficient is not nearly as important as the correct exponent. See the [[Systems Design/Principles/Basics/Resource Estimation/Napkin Estimates|Napkin Estimates]] guide for more pointers.
 
 ## Metrics of Estimation
 

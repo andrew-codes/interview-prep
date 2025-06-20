@@ -1,7 +1,7 @@
 ---
 aliases: [Core Challenges]
 date created: Thursday, June 19th 2025, 11:21:11 am
-date modified: Friday, June 20th 2025, 12:07:50 pm
+date modified: Friday, June 20th 2025, 5:08:52 pm
 linter-yaml-title-alias: Core Challenges
 tags: []
 title: Core Challenges
@@ -15,7 +15,7 @@ This can be solved by segmenting users across many servers and/or databases. For
 
 ## Too Much Data to Move Around
 
-Solution is to segment users across [partitions](Scaling%20Systems#Partitioning.md). For example, database 1 contains users 1 - n and database 2 contains users (n+1) - k.
+Solution is to segment users across [partitions](Systems Design/Principles/Basics/Scaling%20Systems#Partitioning.md). For example, database 1 contains users 1 - n and database 2 contains users (n+1) - k.
 
 ## Fast and Responsive System
 
