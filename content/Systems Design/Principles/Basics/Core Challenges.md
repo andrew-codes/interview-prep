@@ -1,7 +1,7 @@
 ---
 aliases: [Core Challenges]
 date created: Thursday, June 19th 2025, 11:21:11 am
-date modified: Friday, June 20th 2025, 5:08:52 pm
+date modified: Saturday, June 21st 2025, 2:00:35 pm
 linter-yaml-title-alias: Core Challenges
 tags: []
 title: Core Challenges
@@ -15,9 +15,9 @@ This can be solved by segmenting users across many servers and/or databases. For
 
 ## Too Much Data to Move Around
 
-Solution is to segment users across [partitions](Systems Design/Principles/Basics/Scaling%20Systems#Partitioning.md). For example, database 1 contains users 1 - n and database 2 contains users (n+1) - k.
+Solution is to segment users across [[Systems Design/Principles/Basics/Scaling Systems#Partitioning|partitions]]. For example, database 1 contains users 1 - n and database 2 contains users (n+1) - k.
 
-## Fast and Responsive System
+## Slow or Unresponsive System
 
 Solution is to process write requests from a message queue. This allows the writes to happen async in the background and gives the front end time to mask the time it takes to actually happen. For example, if it takes on average 2 seconds to process a write request, then the UI could show a view before taking the user to read the contents of the write request. This interaction takes longer than the time to process and so the delay is not easily perceivable.
 

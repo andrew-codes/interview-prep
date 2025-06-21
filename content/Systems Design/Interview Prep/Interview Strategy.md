@@ -87,7 +87,7 @@ Details to secondarily focus on:
 You can also start to identify big rocks, or major challenges the design will need to overcome to strike the right balance to meet the needs of the system given its constraints. You do not need to dive into detail into any of these big rocks; simply note their existence so you can speak more to them in the deep dive.
 
 > [!NOTE]
-> Keep the high-level design to domains of responsibility and use [[Systems Design/Principles/Basics/Components#Simple Components|simple components]] to represent them. Remember, the design needs to be understandable and executable by engineers of varying levels.
+> Keep the high-level design to domains of responsibility and use [[Systems Design/Principles/Components#Simple Components|simple components]] to represent them. Remember, the design needs to be understandable and executable by engineers of varying levels.
 
 ### Step 5. Deep Dive
 
@@ -97,7 +97,7 @@ In this step, you'll focus on:
 2. Scaling
    1. Availability and consistency story for each component
    2. Consistency and availability patterns leveraged
-3. Introduce more [[Systems Design/Principles/Basics/Components#Advanced Components|advanced components]] and how they fit into the overall system
+3. Introduce more [[Systems Design/Principles/Components#Advanced Components|advanced components]] and how they fit into the overall system
 
 Discuss not only how each component will work, but also the challenges that engineering teams need to be aware of and their solutions.
 

@@ -1,7 +1,7 @@
 ---
 aliases: [index]
 date created: Friday, June 20th 2025, 10:58:44 am
-date modified: Friday, June 20th 2025, 6:44:30 pm
+date modified: Saturday, June 21st 2025, 1:09:38 pm
 linter-yaml-title-alias: index
 tags: []
 title: index

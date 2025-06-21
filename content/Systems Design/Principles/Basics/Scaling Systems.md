@@ -1,7 +1,7 @@
 ---
 aliases: [Scaling Systems]
 date created: Thursday, June 19th 2025, 11:38:04 am
-date modified: Friday, June 20th 2025, 11:23:23 am
+date modified: Saturday, June 21st 2025, 1:58:56 pm
 linter-yaml-title-alias: Scaling Systems
 tags: []
 title: Scaling Systems
@@ -21,9 +21,11 @@ Monolith {
 		Trending
 	}
 }
+
 Monolith Database {
 	shape: cylinder
 }
+
 Monolith.Application -> Monolith Database
 
 Microservices {
