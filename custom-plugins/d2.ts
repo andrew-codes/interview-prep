@@ -18,7 +18,7 @@ export const D2: QuartzTransformerPlugin<Partial<Options>> = (userOpts) => {
       plugins.push([
         remarkD2,
         {
-          defaultD2Opts: ["-t 0", "--dark-theme 200"],
+          defaultD2Opts: ["--theme", "0", "--dark-theme", "200"],
           compilePath: path.join("public/static/d2"),
           ext: userOpts?.imageType || "svg",
           defaultImageAttributes: {
