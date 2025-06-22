@@ -1,7 +1,7 @@
 ---
 aliases: [Principles]
 date created: Friday, June 20th 2025, 11:24:30 am
-date modified: Saturday, June 21st 2025, 8:58:28 pm
+date modified: Sunday, June 22nd 2025, 10:44:22 am
 linter-yaml-title-alias: Principles
 tags: []
 title: Principles
@@ -22,4 +22,5 @@ Everything in systems design is focused on evaluating the trade-offs and choosin
 2. [[Systems Design/Principles/Basics/Scaling Systems|Scaling Systems]]
 3. [[Systems Design/Principles/Basics/Non-Functional Requirements#Additional Non-Functional Requirements|Additional Non-Functional Requirements]]
 4. [[Systems Design/Principles/Components|Components]]
-5. [[Systems Design/Principles/Basics/Communication Protocols|Communication Protocols]]
+5. [[Systems Design/Principles/Basics/Error Handling Patterns|Error Handling Patterns]]
+6. [[Systems Design/Principles/Basics/Communication Protocols|Communication Protocols]]

@@ -1,7 +1,7 @@
 ---
 aliases: [Load Balancer]
 date created: Saturday, June 21st 2025, 1:31:02 pm
-date modified: Saturday, June 21st 2025, 7:35:52 pm
+date modified: Sunday, June 22nd 2025, 10:51:24 am
 linter-yaml-title-alias: Load Balancer
 tags: []
 title: Load Balancer
@@ -22,6 +22,7 @@ Traffic can be routed based on a variety of strategies:
 - Random
 - Least load
 - Session based
+- IP/URL hash
 - Round robin/weighted round robin
 - Layer 4
 - Layer 7

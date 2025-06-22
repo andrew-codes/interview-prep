@@ -1,7 +1,7 @@
 ---
 aliases: [Interview Strategy]
 date created: Friday, June 20th 2025, 9:44:27 am
-date modified: Friday, June 20th 2025, 6:47:30 pm
+date modified: Sunday, June 22nd 2025, 11:09:11 am
 linter-yaml-title-alias: Interview Strategy
 tags: []
 title: Interview Strategy
@@ -103,6 +103,10 @@ Discuss not only how each component will work, but also the challenges that engi
 
 > [!TIP] Focus on tradeoffs
 > The key here is to identify trade-offs in variations of the design; aligning and communicating those that most match the constraints and requirements of the system.
+
+#### Prepare for Questions
+
+See [[Systems Design/Interview Prep/Prepare for Questions|Prepare for Questions]] to see common questions and answers about used components.
 
 ### Step 6: Justification for Decisions
 

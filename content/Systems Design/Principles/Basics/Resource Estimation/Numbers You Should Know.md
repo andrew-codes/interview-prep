@@ -1,7 +1,7 @@
 ---
 aliases: [Numbers You Should Know]
 date created: Friday, June 20th 2025, 1:13:34 pm
-date modified: Saturday, June 21st 2025, 9:32:13 pm
+date modified: Sunday, June 22nd 2025, 10:58:47 am
 linter-yaml-title-alias: Numbers You Should Know
 tags: []
 title: Numbers You Should Know
@@ -54,7 +54,18 @@ Power           Exact Value         Approx Value        Bytes
 
 ## Latency
 
-> [!TODO] Add common latency measurements
+| Scenario                             | Time           |
+| ------------------------------------ | -------------- |
+| Access L1 cache memory               | 0.5 ns         |
+| Branch misprediction                 | 5 ns           |
+| Access L2 cache memory               | 7 ns           |
+| Mutex lock/unlock                    | 25 ns          |
+| Access (main) memory                 | 100 ns         |
+| Send 2KB over 1Gbps network          | 20,000 ns      |
+| Read 1MB sequentially from memory    | 250,000 ns     |
+| Fetch from new disk location (seek)  | 8,000,000 ns   |
+| Read 1MB sequentially from disk      | 20,000,000 ns  |
+| Round trip request from US to Europe | 150,000,000 ns |
 
 ## QPS
 
