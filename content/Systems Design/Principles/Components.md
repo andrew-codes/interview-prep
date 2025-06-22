@@ -1,7 +1,7 @@
 ---
 aliases: [Components]
 date created: Thursday, June 19th 2025, 11:39:23 am
-date modified: Saturday, June 21st 2025, 3:15:47 pm
+date modified: Saturday, June 21st 2025, 8:43:10 pm
 linter-yaml-title-alias: Components
 tags: []
 title: Components
@@ -12,7 +12,7 @@ title: Components
 1. Stateless services
 2. [[Systems Design/Principles/Components/Databases|Database]] reads with replication and caching
 3. [[Systems Design/Principles/Components/Databases|Database]] writes with partitioning
-4. Data flow with message queues
+4. Data flow with [[Systems Design/Principles/Components/Queues|queues]]
 
 ## Advanced Components
 
@@ -21,8 +21,8 @@ title: Components
 3. [Load Balancer](Systems%20Design/Principles/Components/Load%20Balancer.md)
 4. Reverse Proxy
 5. Application layer scaling (service discovery)
-6. Database
-7. Caches
+6. [[Systems Design/Principles/Components/Databases|Database]]
+7. [[Systems Design/Principles/Components/Caches|Caches]]
 8. Communication protocols
 
 ## Additional Components
