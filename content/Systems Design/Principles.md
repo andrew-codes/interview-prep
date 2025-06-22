@@ -1,7 +1,7 @@
 ---
 aliases: [Principles]
 date created: Friday, June 20th 2025, 11:24:30 am
-date modified: Saturday, June 21st 2025, 8:06:00 pm
+date modified: Saturday, June 21st 2025, 8:58:28 pm
 linter-yaml-title-alias: Principles
 tags: []
 title: Principles
@@ -15,3 +15,11 @@ Everything in systems design is focused on evaluating the trade-offs and choosin
 2. [[Systems Design/Principles/Latency vs Throughput|Latency vs Throughput]]
 3. [[Systems Design/Principles/Availability vs Consistency|Availability vs Consistency]]
 4. [[Systems Design/Principles/Volume vs Cost|Volume vs Cost]]
+
+## Basics
+
+1. [[Systems Design/Principles/Basics/Core Challenges|Core Challenges]]
+2. [[Systems Design/Principles/Basics/Scaling Systems|Scaling Systems]]
+3. [[Systems Design/Principles/Basics/Non-Functional Requirements#Additional Non-Functional Requirements|Additional Non-Functional Requirements]]
+4. [[Systems Design/Principles/Components|Components]]
+5. [[Systems Design/Principles/Basics/Communication Protocols|Communication Protocols]]

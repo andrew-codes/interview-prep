@@ -23,7 +23,6 @@ title: Components
 5. Application layer scaling (service discovery)
 6. [[Systems Design/Principles/Components/Databases|Database]]
 7. [[Systems Design/Principles/Components/Caches|Caches]]
-8. Communication protocols
 
 ## Additional Components
 
