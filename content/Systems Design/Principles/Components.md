@@ -1,7 +1,7 @@
 ---
 aliases: [Components]
 date created: Thursday, June 19th 2025, 11:39:23 am
-date modified: Saturday, June 21st 2025, 8:43:10 pm
+date modified: Saturday, June 21st 2025, 8:59:48 pm
 linter-yaml-title-alias: Components
 tags: []
 title: Components

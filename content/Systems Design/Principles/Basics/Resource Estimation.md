@@ -1,7 +1,7 @@
 ---
 aliases: [Resource Estimation]
 date created: Thursday, June 19th 2025, 12:07:35 pm
-date modified: Saturday, June 21st 2025, 3:02:32 pm
+date modified: Saturday, June 21st 2025, 9:33:01 pm
 linter-yaml-title-alias: Resource Estimation
 tags: []
 title: Resource Estimation
@@ -28,3 +28,5 @@ These become increasingly important for infrastructure design questions; e.g. ra
 - Latency
 - Response time
 - Storage size
+
+See [[Systems Design/Principles/Basics/Resource Estimation/Numbers You Should Know|Numbers You Should Know]] for insights into common values for these metrics.

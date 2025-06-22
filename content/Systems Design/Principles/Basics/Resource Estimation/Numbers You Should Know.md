@@ -1,7 +1,7 @@
 ---
 aliases: [Numbers You Should Know]
 date created: Friday, June 20th 2025, 1:13:34 pm
-date modified: Saturday, June 21st 2025, 3:03:48 pm
+date modified: Saturday, June 21st 2025, 9:32:13 pm
 linter-yaml-title-alias: Numbers You Should Know
 tags: []
 title: Numbers You Should Know
@@ -55,4 +55,12 @@ Power           Exact Value         Approx Value        Bytes
 ## Latency
 
 > [!TODO] Add common latency measurements
-![[Systems Design/Principles/Basics/Resource Estimation/Napkin Estimates]]
+
+## QPS
+
+| Size      | QPS             | Scenarios                                                                                                                                                                                                                         |
+| --------- | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Low       | 1-100           | - Simple unified backends; express/django<br>- Relational database; PostgreSQL/MySQL<br>- Single server instance                                                                                                                  |
+| Medium    | 100-1,000       | - Horizontal and decoupling important<br>- Modular; microservices<br>- Sharding, replication, caching<br>- Orchestration software, such as K8s                                                                                    |
+| High      | 1,000 - 100,000 | - Microservices, message queues, redundancy, and distributed systems<br>- Event-driven architecture; message queues<br>- Distributed data stores<br>- Heavy caching on data stores<br>- Orchestration and load balancers utilized |
+| Very High | 100,000+        | - Globally replicated databases<br>- Runs in multi-regional data centers<br>- Serverless to scale on demand<br>- Multiple cloud providers for redundancy                                                                          |

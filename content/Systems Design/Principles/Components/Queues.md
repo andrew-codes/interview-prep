@@ -1,7 +1,7 @@
 ---
 aliases: [Queues]
 date created: Saturday, June 21st 2025, 7:42:41 pm
-date modified: Saturday, June 21st 2025, 8:39:04 pm
+date modified: Saturday, June 21st 2025, 9:46:24 pm
 linter-yaml-title-alias: Queues
 tags: []
 title: Queues
@@ -29,17 +29,25 @@ Useful when processing data is too long to be done inline (in scope of the reque
 
 A message queue can receive, hold, and deliver messages. Here a message represents an action or request along with relevant data and metadata. Message queues may or may not be persistent; meaning a non persistent implementation will lose all messages once the queue process restarts.
 
-> [!NOTE] Messages may or may not be received in order or only once.
-
 Examples include:
 
-- RabbitMQ (requires adapting to the AMQP protocol and node management)
+- RabbitMQ; requires adapting to the Advanced Message Queuing Protocol (AMQP) and node management
 - Mosquitto (MQTT)
 - NServiceBus
 
 ### Task Queues
 
 Specialized queue that can receive tasks and related data, runs them, then delivers their results. Can be scheduled and typically run computationally intensive jobs.
+
+## Protocol Types
+
+|            | AMQP/JMS-style                                                               | Log-based                                                                   |
+| ---------- | ---------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| Storage    | In-memory/transient                                                          | Persistent/on disk                                                          |
+| Durability | Optional                                                                     | Strong durability guarantees                                                |
+| Ordering   | Unordered or per-queue ordering                                              | Partition-based                                                             |
+| Use When   | Messages are expensive to process, order not important                       | Messages are fast to process, ordering is important                         |
+| Examples   | Encoding media, handling large files, fetch data from ticketing event system | Analytics, event sourcing, financial/payment processing, IOT sensor streams |
 
 ## Back Pressure
 
