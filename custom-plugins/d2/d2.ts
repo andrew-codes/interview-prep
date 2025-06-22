@@ -1,8 +1,8 @@
 import path from "path"
-import remarkD2 from "remark-d2"
 import { PluggableList } from "unified"
 import { visit } from "unist-util-visit"
-import { QuartzTransformerPlugin } from "../quartz/plugins/types"
+import { QuartzTransformerPlugin } from "../../quartz/plugins/types"
+import remarkD2 from "./remark"
 
 export interface Options {
   imageType?: "png" | "svg"
@@ -41,9 +41,7 @@ export const D2: QuartzTransformerPlugin<Partial<Options>> = (userOpts) => {
               if (node.tagName === "img" && node.properties?.src) {
                 const src = String(node.properties.src)
                 if (src.endsWith(`.${userOpts?.imageType ?? "svg"}`) && src.match(searchMatch)) {
-                  node.properties.src = src
-                    .replace(/-/g, encodeURI(" "))
-                    .replace(searchMatch, `/${suffix}/static/d2/content`)
+                  node.properties.src = src.replace(searchMatch, `/${suffix}/static/d2/content`)
                 }
               }
             })

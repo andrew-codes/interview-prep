@@ -1,4 +1,4 @@
-import { D2 } from "./custom-plugins/d2"
+import { D2 } from "./custom-plugins/d2/d2"
 import { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
 
