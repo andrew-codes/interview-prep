@@ -17,7 +17,7 @@ Some reverse proxies can act as a cache.
 
 ## Application
 
-[[Systems Design/Principles/Components/Caches/Invalidation and Eviction Strategies|Cache invalidation]] is critical as application caches such as Redis or Memcached operate entirely within memory. While memory is significantly faster to access, there is also significantly less of it compared to disk space. Both Redis and Memcached are [[Systems Design/Principles/Components/Databases/Key-Value Store Database|key-value store databases]]. Some, such as Redis, offer persistence to disk and other features; such as native handling of sorted lists.
+[[Systems Design/Principles/Components/Caches/Invalidation and Eviction Strategies|Cache invalidation]] is critical as application caches such as Redis or Memcached operate entirely within memory. While memory is significantly faster to access, there is also significantly less of it compared to disk space. Both Redis and Memcached are [[Systems Design/Principles/Components/Persistent Storage/Databases/Key-Value Store Database|key-value store databases]]. Some, such as Redis, offer persistence to disk and other features; such as native handling of sorted lists.
 
 ### Query Caching
 

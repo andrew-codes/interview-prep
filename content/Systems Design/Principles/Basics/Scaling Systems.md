@@ -1,7 +1,7 @@
 ---
 aliases: [Scaling Systems]
 date created: Thursday, June 19th 2025, 11:38:04 am
-date modified: Sunday, June 22nd 2025, 10:09:04 am
+date modified: Sunday, June 22nd 2025, 12:22:57 pm
 linter-yaml-title-alias: Scaling Systems
 tags: []
 title: Scaling Systems
@@ -68,7 +68,7 @@ Load Balancer -> User Service 3
 
 ## Partitioning
 
-This approach splits requests across a physical boundary (typically network or geographic location). This is a common approach to scale both databases ([[Systems Design/Principles/Components/Databases/Relational Database#Sharding|sharding]]) and systems across data centers.
+This approach splits requests across a physical boundary (typically network or geographic location). This is a common approach to scale both databases ([[Systems Design/Principles/Components/Persistent Storage/Databases/Relational Database#Sharding|sharding]]) and systems across data centers.
 
 ```d2
 Data Center 1 {

@@ -13,7 +13,7 @@ There are two primary patterns used for ensure high availability in systems; rep
 
 ### Replication
 
-Applies to data stores. See [[Systems Design/Principles/Components/Databases/Relational Database#Replication|Database Replication]] for more information.
+Applies to data stores. See [[Systems Design/Principles/Components/Persistent Storage/Databases/Relational Database#Replication|Database Replication]] for more information.
 
 ### Fail-over
 
