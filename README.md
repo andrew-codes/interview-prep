@@ -1,18 +1,5 @@
-# Quartz v4
+# Overview
 
-> “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming
+These are my notes and study guide I've compiled to prepare me for staff engineering interviews. These are ever changing and being updated as I learn and record more.
 
-Quartz is a set of tools that helps you publish your [digital garden](https://jzhao.xyz/posts/networked-thought) and notes as a website for free.
-Quartz v4 features a from-the-ground rewrite focusing on end-user extensibility and ease-of-use.
-
-🔗 Read the documentation and get started: https://quartz.jzhao.xyz/
-
-[Join the Discord Community](https://discord.gg/cRFFHYye7t)
-
-## Sponsors
-
-<p align="center">
-  <a href="https://github.com/sponsors/jackyzha0">
-    <img src="https://cdn.jsdelivr.net/gh/jackyzha0/jackyzha0/sponsorkit/sponsors.svg" />
-  </a>
-</p>
+It is best consumed locally via [Obsidian](https://obsidian.md/). Simply download or clone this repo and open the content directory as an Obsidian vault. It may also be consumed secondarily via the [web version](https://andrew-codes.github.io/interview-prep/).
