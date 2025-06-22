@@ -32,19 +32,18 @@ export const D2: QuartzTransformerPlugin<Partial<Options>> = (userOpts) => {
     htmlPlugins(ctx) {
       const baseUrlParts = ctx.cfg.configuration.baseUrl?.split("/")
       const suffix = baseUrlParts?.[baseUrlParts.length - 1] || ""
+
+      const searchMatch = /^(\.\.\/)*d2\/content/
       return [
         () => {
           return (tree) => {
             visit(tree, "element", (node) => {
               if (node.tagName === "img" && node.properties?.src) {
                 const src = String(node.properties.src)
-                if (
-                  src.endsWith(`.${userOpts?.imageType ?? "svg"}`) &&
-                  src.startsWith("../../../d2/content")
-                ) {
+                if (src.endsWith(`.${userOpts?.imageType ?? "svg"}`) && src.match(searchMatch)) {
                   node.properties.src = src
                     .replace(/-/g, encodeURI(" "))
-                    .replace("../../../d2/content", `/${suffix}/static/d2/content`)
+                    .replace(searchMatch, `/${suffix}/static/d2/content`)
                 }
               }
             })
