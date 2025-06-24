@@ -1,11 +1,9 @@
 ---
-aliases:
-  - URL Shortener Solution
+aliases: [URL Shortener Solution]
 date created: Tuesday, June 24th 2025, 12:27:01 pm
-date modified: Tuesday, June 24th 2025, 2:10:53 pm
+date modified: Tuesday, June 24th 2025, 2:26:49 pm
 linter-yaml-title-alias: URL Shortener Solution
-tags:
-  - practice/easy
+tags: [practice/easy]
 title: URL Shortener Solution
 ---
 
@@ -172,27 +170,33 @@ Shortener -> NoSQL DB: 3. stores (valid) URL, ID
 #### Diagram
 
 ```d2
-Customer
+Users {
+	Customer.Customer DNS
+	Customer.User
+	End User
+}
 API Gateway
-Shortener
+Redis {
+	shape: cylinder
+}
 NoSQL DB {
 	shape: cylinder
 }
 Customer SQL DB {
 	shape: cylinder
 }
+Redirection Services
 
-Customer -> API Gateway -> Shortener
+# Shortening
+Users.Customer.User -> API Gateway -> Shortener
 Shortener -> Customer SQL DB
 Shortener -> NoSQL DB
 
-User
-Redis {
-	shape: cylinder
-}
-Redirection Services
-
-User -> API Gateway -> Redirection Services: 1. GET
-Redirection Services -> Redis: 2. return 302 redirect
-Redirection Services -> NoSQL DB: fallback
+# Redirection
+Users.End User -> Users.Customer.Customer DNS: 1. GET
+Users.Customer.Customer DNS -> API Gateway: 2. dns resolves
+API Gateway -> Redirection Services: 3. request longURL
+Redirection Services -> Redis: 4. retrieve longUrl
+Redirection Services <-> NoSQL DB: 4.1 fallback
+Redirection Services -> Users.End User: 5. return 302 redirect
 ```
