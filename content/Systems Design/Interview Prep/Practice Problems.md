@@ -10,4 +10,4 @@ title: Practice Problems
 > [!TODO] Add problems/solutions
 > I'll continue adding problems and solutions as I cover and answer them throughout my studies.
 
-1. Design a URL shortener service (with a twist) ([[Systems Design/Interview Prep/Practice Problems/URL Shortener Solution|URL Shortener Solution]])
+1. Design a URL shortener service (branded) ([[Systems Design/Interview Prep/Practice Problems/URL Shortener Solution|URL Shortener Solution]])
