@@ -1,9 +1,11 @@
 ---
-aliases: [URL Shortener Solution]
+aliases:
+  - URL Shortener Solution
 date created: Tuesday, June 24th 2025, 12:27:01 pm
-date modified: Tuesday, June 24th 2025, 2:10:07 pm
+date modified: Tuesday, June 24th 2025, 2:10:53 pm
 linter-yaml-title-alias: URL Shortener Solution
-tags: [practice/medium]
+tags:
+  - practice/easy
 title: URL Shortener Solution
 ---
 
