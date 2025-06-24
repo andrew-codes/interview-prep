@@ -1,7 +1,7 @@
 ---
 aliases: [URL Shortener Solution]
 date created: Tuesday, June 24th 2025, 12:27:01 pm
-date modified: Tuesday, June 24th 2025, 2:26:49 pm
+date modified: Tuesday, June 24th 2025, 2:41:12 pm
 linter-yaml-title-alias: URL Shortener Solution
 tags: [practice/easy]
 title: URL Shortener Solution
@@ -35,17 +35,19 @@ Design a URL shortener service.
 
 #### Feature
 
-1. URL shortening
+1. On-boarding
+	1. Customers can register domains to use with short URLs
+2. URL shortening
 	- Users can input a long URL and receive a shortened URL
 	- Supports creating custom short URLs
 	- Short URLs are alphanumeric and contain no special characters
 	- Short URLs are globally unique for a TLD
-	- Users can specify their own TLD to use for the shortened link
-2. URL redirection
+	- Users can specify their own (registered) TLD to use for the shortened link
+3. URL redirection
 	- Short URLs redirect users to the long-form URL
 	- Must be highly available
 	- Redirection needs to be near real-time
-3. Short URL analytics
+4. Short URL analytics
 	1. Short URLs click counts are tracked over time
 	2. The data storage is up to a maximum of 3 years
 
@@ -79,6 +81,19 @@ Design a URL shortener service.
 		- 1M URLs a day (writes) at 8B each is < 4GB for three years
 
 ## High Level Design
+
+### On-boarding
+
+```d2
+Customer
+Onboard
+Customer SQL DB {
+	shape: cylinder
+}
+
+Customer -> Onboard: 1. POST TLD
+Onboard -> Customer SQL DB: 2. stores TLD
+```
 
 ### Shortener
 
@@ -115,7 +130,7 @@ Accept: application/json
 {
 	longUrl: "https://andrew.codes/posts/agile-forecasting",
 	"slug": "agile",
-	"domain": "aka.andrew.codes"
+	"domainId": "aka.andrew.codes"
 }
 ```
 
@@ -153,10 +168,10 @@ Content-type: application/json
 ```d2
 Customer
 Shortener
-NoSQL DB {
+Customer SQL DB {
 	shape: cylinder
 }
-Customer SQL DB {
+NoSQL DB {
 	shape: cylinder
 }
 
@@ -171,9 +186,8 @@ Shortener -> NoSQL DB: 3. stores (valid) URL, ID
 
 ```d2
 Users {
-	Customer.Customer DNS
-	Customer.User
 	End User
+	Customer.Customer DNS
 }
 API Gateway
 Redis {
@@ -182,15 +196,8 @@ Redis {
 NoSQL DB {
 	shape: cylinder
 }
-Customer SQL DB {
-	shape: cylinder
-}
 Redirection Services
 
-# Shortening
-Users.Customer.User -> API Gateway -> Shortener
-Shortener -> Customer SQL DB
-Shortener -> NoSQL DB
 
 # Redirection
 Users.End User -> Users.Customer.Customer DNS: 1. GET
