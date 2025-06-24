@@ -1,7 +1,7 @@
 ---
 aliases: [URL Shortener Solution]
 date created: Tuesday, June 24th 2025, 12:27:01 pm
-date modified: Tuesday, June 24th 2025, 2:48:14 pm
+date modified: Tuesday, June 24th 2025, 2:51:32 pm
 linter-yaml-title-alias: URL Shortener Solution
 tags: [practice/easy]
 title: URL Shortener Solution
@@ -97,8 +97,6 @@ Onboard -> Customer SQL DB: 2. stores TLD
 
 ### Shortener
 
-#### Diagram
-
 ```d2
 Customer
 Shortener
@@ -115,8 +113,6 @@ Shortener -> NoSQL DB: 3. stores (valid) URL, ID
 ```
 
 ### Redirection
-
-#### Diagram
 
 ```d2
 Users {
@@ -144,6 +140,6 @@ Redirection Services -> Users.End User: 5. return 302 redirect
 
 ### URL Analytics
 
-## Deep Dive (20 mins)
+## Deep Dive & Justifications (20 mins)
 
 ## Follow-up Questions (10 mins)
