@@ -1,7 +1,7 @@
 ---
 aliases: [URL Shortener Solution]
 date created: Tuesday, June 24th 2025, 12:27:01 pm
-date modified: Tuesday, June 24th 2025, 2:41:12 pm
+date modified: Tuesday, June 24th 2025, 2:48:14 pm
 linter-yaml-title-alias: URL Shortener Solution
 tags: [practice/easy]
 title: URL Shortener Solution
@@ -14,7 +14,7 @@ title: URL Shortener Solution
 
 Design a URL shortener service.
 
-## Feature Exceptions (5 mins)
+## Feature Exceptions (10 mins)
 
 ### Initial Clarifications
 
@@ -47,7 +47,7 @@ Design a URL shortener service.
 	- Short URLs redirect users to the long-form URL
 	- Must be highly available
 	- Redirection needs to be near real-time
-4. Short URL analytics
+4. URL analytics
 	1. Short URLs click counts are tracked over time
 	2. The data storage is up to a maximum of 3 years
 
@@ -65,7 +65,7 @@ Design a URL shortener service.
 3. Advanced analytics
 4. Security and safeguards against usage for SPAM, abuse, etc.
 
-## Estimations
+## Estimations (5 mins)
 
 - R/W Ratio is 100:1; redirects happen significantly more frequently than shortening URLs
 - **DAU is 100M**
@@ -80,7 +80,7 @@ Design a URL shortener service.
 		- 8B for click count (32bit integer may not be enough, so opting for 64bit integer)
 		- 1M URLs a day (writes) at 8B each is < 4GB for three years
 
-## High Level Design
+## High Level Design (10 mins)
 
 ### On-boarding
 
@@ -96,72 +96,6 @@ Onboard -> Customer SQL DB: 2. stores TLD
 ```
 
 ### Shortener
-
-#### API Endpoints
-
-##### `POST /api/shorten`
-
-###### Shorten without Branding
-
-```http
-POST /api/urls/short
-Accept: application/json
-
-{
-	longUrl: "https://andrew.codes/posts/agile-forecasting"
-}
-```
-
-```http
-GET /api/urls/shorten
-Content-type: application/json
-
-{
-	shortUrl: "https://rebrand.com/abcd"
-}
-```
-
-###### Shorten with Branding
-
-```http
-POST /api/urls/short
-Accept: application/json
-
-{
-	longUrl: "https://andrew.codes/posts/agile-forecasting",
-	"slug": "agile",
-	"domainId": "aka.andrew.codes"
-}
-```
-
-```http
-GET /api/urls/shorten
-Content-type: application/json
-
-{
-	shortUrl: "https://aka.andrew.codes/agile"
-}
-```
-
-##### `GET api/shorten`
-
-```http
-POST /api/urls/short
-Accept: application/json
-
-{
-	shortUrl: "https://rebrand.com/abcd"
-}
-```
-
-```http
-GET /api/urls/shorten
-Content-type: application/json
-
-{
-	shortUrl: "https://andrew.codes/posts/agile-forecasting"
-}
-```
 
 #### Diagram
 
@@ -207,3 +141,9 @@ Redirection Services -> Redis: 4. retrieve longUrl
 Redirection Services <-> NoSQL DB: 4.1 fallback
 Redirection Services -> Users.End User: 5. return 302 redirect
 ```
+
+### URL Analytics
+
+## Deep Dive (20 mins)
+
+## Follow-up Questions (10 mins)
