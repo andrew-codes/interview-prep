@@ -1,7 +1,7 @@
 ---
 aliases: [URL Shortener Solution]
 date created: Tuesday, June 24th 2025, 12:27:01 pm
-date modified: Tuesday, June 24th 2025, 2:51:32 pm
+date modified: Tuesday, June 24th 2025, 4:08:09 pm
 linter-yaml-title-alias: URL Shortener Solution
 tags: [practice/easy]
 title: URL Shortener Solution
@@ -24,12 +24,12 @@ Design a URL shortener service.
 2. The problem states the service shortens URLs, but it does not indicate why users want to do so. What is the reason users want to shorten URLs?
 	- The target persona are not consumers wanting to share URLs
 	- The target persona are businesses. They will use this service to create branded links that then can be shared in marketing campaigns
-- Do users need to customize more than the URL's slug, like the TLD (top level domain)?
-1. Are there any metrics our users care to track given they are using this service for their marketing campaigns?
+3. Do users need to customize more than the URL's slug, like the TLD (top level domain)?
+4. Are there any metrics our users care to track given they are using this service for their marketing campaigns?
 	- Users will want to track click counts for each link
-2. How long do we store the URLs and their associated analytics? Are there any privacy governance, such as GDPR, that may impact data retention and/or storage location?
-	1. Consuming users may be located anywhere in the world, meaning we need to adhere to GDPR in terms of collection of user data
-	2. Data retention is 3 years for user collected analytics
+5. How long do we store the URLs and their associated analytics? Are there any privacy governance, such as GDPR, that may impact data retention and/or storage location?
+	- Consuming users may be located anywhere in the world, meaning we need to adhere to GDPR in terms of collection of user data
+	- Data retention is 3 years for user collected analytics
 
 ### Requirements
 
