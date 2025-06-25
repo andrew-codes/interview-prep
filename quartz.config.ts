@@ -14,7 +14,8 @@ const config: QuartzConfig = {
     enableSPA: true,
     enablePopovers: true,
     analytics: {
-      provider: "plausible",
+      provider: "posthog",
+      apiKey: "phc_48MVcLzQ9ZEK3A2oBraMFnNvpkDxjdlbgu0RMi38FGs",
     },
     locale: "en-US",
     baseUrl: "andrew-codes.github.io/interview-prep",
