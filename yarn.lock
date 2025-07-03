@@ -60,14 +60,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@andrew-codes/nx-interview-prep@workspace:tools/nx-interview-prep":
-  version: 0.0.0-use.local
-  resolution: "@andrew-codes/nx-interview-prep@workspace:tools/nx-interview-prep"
-  dependencies:
-    tslib: "npm:^2.3.0"
-  languageName: unknown
-  linkType: soft
-
 "@babel/code-frame@npm:^7.0.0, @babel/code-frame@npm:^7.12.13, @babel/code-frame@npm:^7.27.1":
   version: 7.27.1
   resolution: "@babel/code-frame@npm:7.27.1"
@@ -8418,6 +8410,16 @@ __metadata:
   checksum: 10c0/8cedd57f07bbc22501516fbfc70447f0c6812871d471096fad9ea603516eacc2137b633633daf432c029712df0baefd793686388ddf5737e3ea15074b877f7ed
   languageName: node
   linkType: hard
+
+"interview-prep@workspace:tools/nx-interview-prep":
+  version: 0.0.0-use.local
+  resolution: "interview-prep@workspace:tools/nx-interview-prep"
+  dependencies:
+    "@nx/devkit": "npm:21.2.2"
+    lodash: "npm:^4.17.21"
+    tslib: "npm:^2.3.0"
+  languageName: unknown
+  linkType: soft
 
 "ip-address@npm:^9.0.5":
   version: 9.0.5

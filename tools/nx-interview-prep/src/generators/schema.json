@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/schema",
-  "$id": "CreateNew",
+  "$id": "NewProblem",
   "title": "",
   "type": "object",
   "properties": {
