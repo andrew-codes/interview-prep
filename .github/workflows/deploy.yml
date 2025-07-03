@@ -29,13 +29,13 @@ jobs:
         with:
           node-version: 22
       - name: Install Dependencies
-        run: npm ci
+        run: yarn
       - name: Build Quartz
-        run: npx quartz build
+        run: yarn nx build docs
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: public
+          path: apps/docs/public
 
   deploy:
     needs: build
