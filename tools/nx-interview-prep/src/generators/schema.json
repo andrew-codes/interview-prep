@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/schema",
+  "$id": "CreateNew",
+  "title": "",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Short identifier for the problem",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What is the name of the problem?"
+    },
+    "language": {
+      "type": "string",
+      "enum": ["react", "typescript"],
+      "x-prompt": "What programming language is the problem written in?"
+    }
+  },
+  "required": ["name", "language"]
+}
