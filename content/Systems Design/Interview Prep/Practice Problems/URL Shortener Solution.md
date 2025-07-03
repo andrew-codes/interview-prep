@@ -1,7 +1,7 @@
 ---
 aliases: [URL Shortener Solution]
 date created: Tuesday, June 24th 2025, 12:27:01 pm
-date modified: Tuesday, June 24th 2025, 4:08:09 pm
+date modified: Saturday, June 28th 2025, 5:23:31 pm
 linter-yaml-title-alias: URL Shortener Solution
 tags: [practice/easy]
 title: URL Shortener Solution
@@ -14,7 +14,7 @@ title: URL Shortener Solution
 
 Design a URL shortener service.
 
-## Feature Exceptions (10 mins)
+## Feature Expectations (10 mins)
 
 ### Initial Clarifications
 
