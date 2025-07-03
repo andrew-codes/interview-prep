@@ -9,6 +9,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "01-select@workspace:problems/react/01-select"
   dependencies:
+    "@types/cypress": "npm:^1.1.6"
+    "@types/react": "npm:^19.1.8"
+    "@types/react-dom": "npm:^19.1.6"
     "@vitejs/plugin-react": "npm:^4.0.0"
     cypress: "npm:^14.5.1"
     react: "npm:^19.1.0"
@@ -4032,6 +4035,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/cypress@npm:^1.1.6":
+  version: 1.1.6
+  resolution: "@types/cypress@npm:1.1.6"
+  dependencies:
+    cypress: "npm:*"
+  checksum: 10c0/50925d0eccd88045c84816a38486472e9f46a35945639b312275769742f7b4348732f5233c86bd7fb816cf8f98b562ca06bc9e7704434bca19666cfbd331f288
+  languageName: node
+  linkType: hard
+
 "@types/d3-array@npm:*":
   version: 3.2.1
   resolution: "@types/d3-array@npm:3.2.1"
@@ -4492,6 +4504,24 @@ __metadata:
   version: 1.1.5
   resolution: "@types/pretty-time@npm:1.1.5"
   checksum: 10c0/0de0168961e1f193d72671dd5a1d7e5df7f64e09701e61debd5ad389d35a2157d0c8d004d0c1febb077c257e3f01511822f36c2eafed7bf272cef6dd595a1995
+  languageName: node
+  linkType: hard
+
+"@types/react-dom@npm:^19.1.6":
+  version: 19.1.6
+  resolution: "@types/react-dom@npm:19.1.6"
+  peerDependencies:
+    "@types/react": ^19.0.0
+  checksum: 10c0/7ba74eee2919e3f225e898b65fdaa16e54952aaf9e3472a080ddc82ca54585e46e60b3c52018d21d4b7053f09d27b8293e9f468b85f9932ff452cd290cc131e8
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:^19.1.8":
+  version: 19.1.8
+  resolution: "@types/react@npm:19.1.8"
+  dependencies:
+    csstype: "npm:^3.0.2"
+  checksum: 10c0/4908772be6dc941df276931efeb0e781777fa76e4d5d12ff9f75eb2dcc2db3065e0100efde16fde562c5bafa310cc8f50c1ee40a22640459e066e72cd342143e
   languageName: node
   linkType: hard
 
@@ -6076,7 +6106,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cypress@npm:^14.5.1":
+"csstype@npm:^3.0.2":
+  version: 3.1.3
+  resolution: "csstype@npm:3.1.3"
+  checksum: 10c0/80c089d6f7e0c5b2bd83cf0539ab41474198579584fa10d86d0cafe0642202343cbc119e076a0b1aece191989477081415d66c9fefbf3c957fc2fc4b7009f248
+  languageName: node
+  linkType: hard
+
+"cypress@npm:*, cypress@npm:^14.5.1":
   version: 14.5.1
   resolution: "cypress@npm:14.5.1"
   dependencies:
