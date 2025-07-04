@@ -18,3 +18,7 @@ node_modules
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+problems/react/**/visual-tests/report
+problems/react/**/visual-tests/screenshots/*
+!problems/react/**/visual-tests/screenshots/baseline

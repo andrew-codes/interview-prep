@@ -1,4 +1,5 @@
 import { defineConfig } from "cypress"
+import getCompareSnapshotsPlugin from "cypress-image-diff-js/plugin"
 
 const config = defineConfig({
   component: {
@@ -6,6 +7,9 @@ const config = defineConfig({
     devServer: {
       framework: "react",
       bundler: "vite",
+    },
+    setupNodeEvents(on, config) {
+      return getCompareSnapshotsPlugin(on, config)
     },
   },
 })

@@ -11,6 +11,7 @@ describe("select", () => {
     )
 
     cy.get("[data-test-id=option]").parent().should("not.be.visible")
+    cy.get("[data-test-id=select").compareSnapshot("no-value")
   })
 
   it(`Selected value set.`, () => {
@@ -24,6 +25,7 @@ describe("select", () => {
 
     cy.get('[data-test-id="selected-value"]').should("have.text", "Option 2")
     cy.get("[data-test-id=option]").parent().should("not.be.visible")
+    cy.get("[data-test-id=select").compareSnapshot("selected-value")
   })
 
   it(`Select a new selected value.`, () => {
@@ -37,9 +39,29 @@ describe("select", () => {
 
     cy.get('[data-test-id="select"]').click()
     cy.get("[data-test-id=option]").parent().should("be.visible")
+    cy.compareSnapshot({
+      name: "open",
+      cypressScreenshotOptions: {
+        clip: { x: 0, y: 0, width: 500, height: 100 },
+      },
+    })
+
     cy.get("[data-test-id=option]").last().click()
     cy.get('[data-test-id="selected-value"]').should("have.text", "Option 3")
     cy.get("[data-test-id=option]").parent().should("not.be.visible")
+  })
+
+  it(`Focused indication`, () => {
+    cy.mount(
+      <Select defaultValue="2">
+        <Option value="1">Option 1</Option>
+        <Option value="2">Option 2</Option>
+        <Option value="3">Option 3</Option>
+      </Select>,
+    )
+
+    cy.get("body").press(Cypress.Keyboard.Keys.TAB)
+    cy.get("[data-test-id=select]").compareSnapshot("focused")
   })
 
   describe("Keyboard navigation.", () => {
@@ -65,6 +87,13 @@ describe("select", () => {
       cy.focused().trigger("keydown", { key: "ArrowDown" })
       cy.focused().trigger("keydown", { key: "ArrowDown" })
       cy.focused().trigger("keydown", { key: "ArrowDown" })
+      cy.compareSnapshot({
+        name: "open-arrow-down-bottom",
+        cypressScreenshotOptions: {
+          clip: { x: 0, y: 0, width: 500, height: 100 },
+        },
+      })
+
       cy.focused().trigger("keydown", { key: "Enter" })
 
       cy.get("[data-test-id=option]").parent().should("not.be.visible")
@@ -90,6 +119,13 @@ describe("select", () => {
       cy.focused().trigger("keydown", { key: "ArrowUp" })
       cy.focused().trigger("keydown", { key: "ArrowUp" })
       cy.focused().trigger("keydown", { key: "ArrowUp" })
+      cy.compareSnapshot({
+        name: "open-arrow-up-top",
+        cypressScreenshotOptions: {
+          clip: { x: 0, y: 0, width: 500, height: 100 },
+        },
+      })
+
       cy.focused().trigger("keydown", { key: "Enter" })
 
       cy.get("[data-test-id=option]").parent().should("not.be.visible")
