@@ -28,6 +28,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      - name: Yarn version
+        run: corepack enable
       - name: Install Dependencies
         run: yarn
       - name: Build Quartz
