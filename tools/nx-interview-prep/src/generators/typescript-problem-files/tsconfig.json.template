@@ -1,0 +1,6 @@
+{
+  "extends": "<%= pathToRoot %>/tsconfig.base.json",
+  "compilerOptions": {
+    "types": ["jest", "node"]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "generators": {
+    "new-problem": {
+      "factory": "./src/generators/new-problem",
+      "schema": "./src/generators/schema.json",
+      "description": "Scaffold a new problem to solve."
+    }
+  }
+}

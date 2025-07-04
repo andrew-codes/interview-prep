@@ -1,0 +1,51 @@
+{
+  "name": "nx-interview-prep",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "tools/nx-interview-prep/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/tools/nx-interview-prep",
+        "main": "tools/nx-interview-prep/src/index.ts",
+        "tsConfig": "tools/nx-interview-prep/tsconfig.lib.json",
+        "assets": [
+          "tools/nx-interview-prep/*.md",
+          {
+            "input": "./tools/nx-interview-prep/src",
+            "glob": "**/!(*.ts)",
+            "output": "./src"
+          },
+          {
+            "input": "./tools/nx-interview-prep/src",
+            "glob": "**/*.d.ts",
+            "output": "./src"
+          },
+          {
+            "input": "./tools/nx-interview-prep",
+            "glob": "generators.json",
+            "output": "."
+          },
+          {
+            "input": "./tools/nx-interview-prep",
+            "glob": "executors.json",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "tools/nx-interview-prep/jest.config.ts"
+      }
+    }
+  }
+}
