@@ -7,6 +7,9 @@
     "problems/**/*",
     "tools/**/*"
   ],
+  "engines": {
+    "node": ">=22.14.0"
+  },
   "devDependencies": {
     "@eslint/js": "^9.8.0",
     "@nx/eslint": "21.2.2",
