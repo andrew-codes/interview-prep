@@ -1,4 +1,4 @@
-const { createProjectGraphAsync, getAffectedGraph } = require("@nx/devkit")
+const { createProjectGraphAsync } = require("@nx/devkit")
 const { execSync } = require("child_process")
 
 ;(async () => {
@@ -21,18 +21,26 @@ Required:
   }
 
   const graph = await createProjectGraphAsync()
+  const affectedProjects = execSync(
+    `npx nx show projects --affected --base=${base} --head=${head}`,
+    {
+      encoding: "utf-8",
+    },
+  )
+    .trim()
+    .split("\n")
 
-  const affectedGraph = await getAffectedGraph(graph, {
-    base,
-    head,
-  })
-
-  const projects = Object.entries(affectedGraph.nodes)
-    .filter(([_, node]) => node.data.tags?.includes(tag) && node.data.tags?.includes("problem"))
+  const projects = Object.entries(graph.nodes)
+    .filter(
+      ([name, node]) =>
+        affectedProjects.includes(name) &&
+        node.data.tags?.includes(tag) &&
+        node.data.tags?.includes("problem"),
+    )
     .map(([name]) => name)
 
   if (projects.length === 0) {
-    throw new Error(`No affected projects tagged '${tag}'`)
+    process.exit(0)
   }
 
   const projectList = projects.join(",")
