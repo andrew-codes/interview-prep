@@ -36,7 +36,7 @@ jobs:
 
   react_tests:
     name: React Problem Tests
-    runs-on: ubuntu-latest
+    runs-on: cypress/included
     steps:
       - uses: actions/checkout@v4
         with:
@@ -57,7 +57,7 @@ jobs:
       - name: Run Tests
         run: |
           yarn node scripts/problems.js --target=test --tag=react
-      - name: Upload artifact
+      - name: Upload failed tests artifacts
         if: failure()
         uses: actions/upload-artifact@v4
         with:

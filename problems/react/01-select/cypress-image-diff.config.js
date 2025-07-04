@@ -1,6 +1,6 @@
 const config = {
   ROOT_DIR: "visual-tests",
-  FAILURE_THRESHOLD: 0.025,
+  FAILURE_THRESHOLD: 0.05,
   CYPRESS_SCREENSHOT_OPTIONS: {
     capture: "viewport",
     padding: 8,

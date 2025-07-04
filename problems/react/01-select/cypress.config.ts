@@ -12,7 +12,7 @@ const config = defineConfig({
       on("before:browser:launch", (browser, launchOptions) => {
         if (browser.name === "edge" && browser.isHeadless) {
           launchOptions.args.push("--window-size=1400,1200")
-          launchOptions.args.push("--force-device-scale-factor=2")
+          launchOptions.args.push("--force-device-scale-factor=1")
         }
       })
 
