@@ -20,9 +20,7 @@ Required:
 
   const graph = await createProjectGraphAsync()
 
-  const projects = await getProjects(graph)
-
-  const filteredProjects = Object.entries(projects)
+  const filteredProjects = Object.entries(graph.nodes)
     .filter(([_, node]) => node.data.tags?.includes(tag) && node.data.tags?.includes("problem"))
     .map(([name]) => name)
 
