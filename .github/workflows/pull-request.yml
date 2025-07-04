@@ -35,7 +35,7 @@ jobs:
       - name: Install deps
         run: yarn
       - name: Run Tests
-        run: yarn node scripts/affected-tagged.js --base=${{ github.event.pull_request.base.sha }} --head=${{ github.event.pull_request.head.sha }} --target=test --tag=typescript
+        run: yarn node scripts/affected-problems.js --base=${{ github.event.pull_request.base.sha }} --head=${{ github.event.pull_request.head.sha }} --target=test --tag=typescript
 
   react_tests:
     name: React Problem Tests
@@ -62,4 +62,4 @@ jobs:
       - name: Install deps
         run: yarn
       - name: Run Tests
-        run: yarn node scripts/affected-tagged.js --base=${{ github.event.pull_request.base.sha }} --head=${{ github.event.pull_request.head.sha }} --target=test --tag=react
+        run: yarn node scripts/affected-problems.js --base=${{ github.event.pull_request.base.sha }} --head=${{ github.event.pull_request.head.sha }} --target=test --tag=react

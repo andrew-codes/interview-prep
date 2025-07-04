@@ -32,9 +32,7 @@ jobs:
         run: yarn
       - name: Run Tests
         run: |
-          PROJECTS=$(npx nx show projects --with-tag=typescript | tr '\n' ',' | sed 's/,$//')
-          echo "Tagged projects: $PROJECTS"
-          yarn nx run-many --target=test --projects=$PROJECTS
+          yarn node scripts/problems.js --target=test --tag=typescript
 
   react_tests:
     name: React Problem Tests
@@ -58,6 +56,4 @@ jobs:
         run: yarn
       - name: Run Tests
         run: |
-          PROJECTS=$(npx nx show projects --with-tag=react | tr '\n' ',' | sed 's/,$//')
-          echo "Tagged projects: $PROJECTS"
-          yarn nx run-many --target=test --projects=$PROJECTS
+          yarn node scripts/problems.js --target=test --tag=react

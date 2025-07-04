@@ -2,7 +2,7 @@
   "name": "react-01",
   "type": "library",
   "source": "{projectRoot}",
-  "tags": ["react"],
+  "tags": ["react", "problem"],
   "targets": {
     "start": {
       "executor": "nx:run-commands",

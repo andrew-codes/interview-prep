@@ -3,7 +3,7 @@ const { execSync } = require("child_process")
 
 ;(async () => {
   const args = process.argv
-    .slice(3)
+    .slice(2)
     .map((arg) => arg.replace("--", "").split("="))
     .reduce((acc, [key, value]) => {
       acc[key] = value
@@ -16,7 +16,7 @@ const { execSync } = require("child_process")
 Required:
   - base
   - head
-  - tags
+  - tag
   - target`)
   }
 
@@ -28,7 +28,7 @@ Required:
   })
 
   const projects = Object.entries(affectedGraph.nodes)
-    .filter(([_, node]) => node.data.tags?.includes(tag))
+    .filter(([_, node]) => node.data.tags?.includes(tag) && node.data.tags?.includes("problem"))
     .map(([name]) => name)
 
   if (projects.length === 0) {
