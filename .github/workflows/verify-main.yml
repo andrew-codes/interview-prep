@@ -57,3 +57,14 @@ jobs:
       - name: Run Tests
         run: |
           yarn node scripts/problems.js --target=test --tag=react
+      - name: Upload artifact
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Cypress-Artifacts
+          if-no-files-found: ignore
+          path: |
+            problems/react/*/cypress/screenshots/**/*.*
+            problems/react/*/cypress/videos/**/*.*
+            problems/react/*/visual-tests/screenshots/comparison
+            problems/react/*/visual-tests/screenshots/diff
