@@ -71,6 +71,7 @@ export async function createNewGenerator(tree: Tree, options: NewProblemGenerato
     root: projectRoot,
     projectType: "library",
     sourceRoot: path.join(projectRoot, "src"),
+    tags: [options.language],
     targets,
   })
   generateFiles(tree, path.join(__dirname, `${options.language}-problem-files`), projectRoot, {

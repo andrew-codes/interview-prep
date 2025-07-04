@@ -1,21 +1,22 @@
 {
-    "name": "react-01",
-    "type": "library",
-    "source": "{projectRoot}",
-    "targets": {
-        "start": {
-            "executor": "nx:run-commands",
-            "options": {
-                "command": "yarn cypress open --component",
-                "cwd": "{projectRoot}"
-            }
-        },
-        "test": {
-            "executor": "nx:run-commands",
-            "options": {
-                "command": "yarn cypress run --component",
-                "cwd": "{projectRoot}"
-            }
-        }
+  "name": "react-01",
+  "type": "library",
+  "source": "{projectRoot}",
+  "tags": ["react"],
+  "targets": {
+    "start": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "yarn cypress open --component",
+        "cwd": "{projectRoot}"
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "yarn cypress run --component",
+        "cwd": "{projectRoot}"
+      }
     }
+  }
 }

@@ -3,6 +3,7 @@
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
   "sourceRoot": "problems/typescript/01-merge-intervals/src",
+  "tags": ["typescript"],
   "targets": {
     "start": {
       "executor": "@nx/jest:jest",
