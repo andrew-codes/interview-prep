@@ -32,14 +32,14 @@ export async function createNewGenerator(tree: Tree, options: NewProblemGenerato
         start: {
           executor: "nx:run-commands",
           options: {
-            command: "yarn cypress open --component",
+            command: "yarn cypress open --component --browser edge",
             cwd: "{projectRoot}",
           },
         },
         test: {
           executor: "nx:run-commands",
           options: {
-            command: "yarn cypress run --component",
+            command: "yarn cypress run --component --browser edge",
             cwd: "{projectRoot}",
           },
         },
