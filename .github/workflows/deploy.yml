@@ -31,7 +31,7 @@ jobs:
       - name: Yarn version
         run: corepack enable
       - name: Install Dependencies
-        run: yarn
+        run: yarn workspaces focus  --production @andrew-codes/interview-prep-docs
       - name: Build Quartz
         run: yarn nx build docs
       - name: Upload artifact
