@@ -15,9 +15,17 @@ To run tests or see a problem (in the case of React), you can use the following 
 ```shell
 yarn
 
-# For UI problems, you can view them via:
+# Run tests for development via:
 yarn nx start react-01
 
 # All problems can be run via:
 yarn nx test react-01
+```
+
+### Create a New Problem
+
+```shell
+yarn nx g interview-prep:new-problem
+# Follow prompts
+yarn
 ```
