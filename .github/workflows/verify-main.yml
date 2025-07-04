@@ -36,7 +36,10 @@ jobs:
 
   react_tests:
     name: React Problem Tests
-    runs-on: cypress/included
+    runs-on: ubuntu-latest
+    container:
+      image: cypress/incldued:latest
+      options: --user 1001
     steps:
       - uses: actions/checkout@v4
         with:
