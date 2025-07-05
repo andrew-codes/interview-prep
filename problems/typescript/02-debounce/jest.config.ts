@@ -1,6 +1,6 @@
 export default {
-  displayName: "<%= title %>",
-  preset: "<%= pathToRoot %>/jest.preset.js",
+  displayName: "Typescript Debounce",
+  preset: "../../../jest.preset.js",
   testEnvironment: "node",
   transform: {
     "^.+\\.[tj]s$": ["ts-jest", { tsconfig: "<rootDir>/tsconfig.spec.json" }],
