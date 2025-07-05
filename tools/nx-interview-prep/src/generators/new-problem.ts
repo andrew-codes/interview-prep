@@ -13,6 +13,25 @@ import * as path from "path"
 import { NewProblemGeneratorSchema } from "./schema"
 
 export async function createNewGenerator(tree: Tree, options: NewProblemGeneratorSchema) {
+  console.debug(options)
+  try {
+    const ghOutput = execSync("gh auth status", {
+      cwd: tree.root,
+      stdio: "pipe",
+    }).toString()
+
+    if (ghOutput.includes("not logged in") && !options.skipGh) {
+      throw new Error(
+        "You are not logged in to GitHub CLI. Please run `gh auth login` to authenticate. Alternatively, you can run this generator with the `--skip-gh` flag to skip GitHub-related commands.",
+      )
+    }
+  } catch (error) {
+    if (!options.skipGh) {
+      throw new Error(
+        "You are not logged in to GitHub CLI. Please run `gh auth login` to authenticate. Alternatively, you can run this generator with the `--skip-gh` flag to skip GitHub-related commands.",
+      )
+    }
+  }
   const projectRootPrefix = path.join("problems", options.language)
   await fs.mkdir(projectRootPrefix, { recursive: true })
 
@@ -97,12 +116,22 @@ export async function createNewGenerator(tree: Tree, options: NewProblemGenerato
     })
 
     execSync(
-      `git checkout -b ${problemId}; git add .; git commit -m "${options.name} ${problemId} creation"; git push -u origin ${problemId}; gh pr create --title "${options.name} ${problemId}" --body "Problem created for ${options.language} interview preparation." --label "practice-problem"`,
+      `git checkout -b ${problemId}; git add .; git commit -m "${options.name} ${problemId} creation"; git push -u origin ${problemId};`,
       {
         cwd: tree.root,
         stdio: "inherit",
       },
     )
+
+    if (!options.skipGh) {
+      execSync(
+        `gh pr create --title "${options.name} ${problemId}" --body "Problem created for ${options.language} interview preparation." --label "practice-problem";`,
+        {
+          cwd: tree.root,
+          stdio: "inherit",
+        },
+      )
+    }
   }
 }
 
