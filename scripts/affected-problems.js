@@ -46,9 +46,12 @@ Required:
   const projectList = projects.join(",")
   console.log(`Running '${target}' on projects: ${projectList}`)
 
-  execSync(`yarn nx run-many --target=${target} --projects=${projectList}`, {
-    stdio: "inherit",
-  })
+  execSync(
+    `yarn nx run-many --target=${target} --projects=${projectList}${tag === "react" ? " --parallel=1" : ""}`,
+    {
+      stdio: "inherit",
+    },
+  )
 })().catch((e) => {
   console.error(e)
   process.exit(1)

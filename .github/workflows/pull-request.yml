@@ -65,7 +65,7 @@ jobs:
       - name: Install deps
         run: yarn
       - name: Run Tests
-        run: yarn node scripts/affected-problems.js --base=${{ github.event.pull_request.base.sha }} --head=${{ github.event.pull_request.head.sha }} --target=test --tag=react --parallel=1
+        run: yarn node scripts/affected-problems.js --base=${{ github.event.pull_request.base.sha }} --head=${{ github.event.pull_request.head.sha }} --target=test --tag=react
       - name: Upload failed tests artifacts
         if: failure()
         uses: actions/upload-artifact@v4
