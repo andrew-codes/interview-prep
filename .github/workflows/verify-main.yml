@@ -59,7 +59,7 @@ jobs:
         run: yarn
       - name: Run Tests
         run: |
-          yarn node scripts/problems.js --target=test --tag=react
+          yarn node scripts/problems.js --target=test --tag=react --parallel=1
       - name: Upload failed tests artifacts
         if: failure()
         uses: actions/upload-artifact@v4
