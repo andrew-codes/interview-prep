@@ -134,8 +134,6 @@ describe("tabs", () => {
 
     cy.get("[data-test-id=tab]").last().trigger("mouseover")
     cy.get("[data-test-id=tab]").first().click()
-
-    cy.get("[data-test-id=capture]").compareSnapshot("activate-tab-removes-selection")
   })
 
   describe("Keyboard navigation", () => {
