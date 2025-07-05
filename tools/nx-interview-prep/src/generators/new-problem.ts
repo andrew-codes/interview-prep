@@ -1,4 +1,12 @@
-import { addProjectConfiguration, formatFiles, generateFiles, Tree } from "@nx/devkit"
+import {
+  addProjectConfiguration,
+  detectPackageManager,
+  formatFiles,
+  generateFiles,
+  getPackageManagerCommand,
+  Tree,
+} from "@nx/devkit"
+import { execSync } from "child_process"
 import fs from "fs/promises"
 import { startCase, toLower } from "lodash"
 import * as path from "path"
@@ -81,6 +89,21 @@ export async function createNewGenerator(tree: Tree, options: NewProblemGenerato
     title: startCase(toLower(`${options.language} ${options.name}`)),
   })
   await formatFiles(tree)
+
+  return async () => {
+    execSync(getPackageManagerCommand(detectPackageManager(tree.root)).install, {
+      cwd: tree.root,
+      stdio: "inherit",
+    })
+
+    execSync(
+      `git checkout -b ${problemId}; git add .; git commit -m "${options.name} ${problemId} creation"; git push -u origin ${problemId}; gh pr create --title "${options.name} ${problemId}" --body "Problem created for ${options.language} interview preparation." --label "practice-problem"`,
+      {
+        cwd: tree.root,
+        stdio: "inherit",
+      },
+    )
+  }
 }
 
 export default createNewGenerator
