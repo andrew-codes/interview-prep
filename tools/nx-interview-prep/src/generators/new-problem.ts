@@ -125,7 +125,7 @@ export async function createNewGenerator(tree: Tree, options: NewProblemGenerato
 
     if (!options.skipGh) {
       execSync(
-        `gh pr create --title "${options.name} ${problemId}" --body "Problem created for ${options.language} interview preparation." --label "practice-problem";`,
+        `gh pr create --title "${options.name} ${problemId}" --body "Problem created for ${options.language} interview preparation." --label "practice problem";`,
         {
           cwd: tree.root,
           stdio: "inherit",
