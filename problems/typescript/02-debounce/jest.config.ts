@@ -7,4 +7,5 @@ export default {
   },
   moduleFileExtensions: ["ts", "js", "html"],
   coverageDirectory: "../../coverage/tools/nx-interview-prep",
+  resetMocks: true,
 }
