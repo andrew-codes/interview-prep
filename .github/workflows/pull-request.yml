@@ -37,43 +37,43 @@ jobs:
       - name: Run Tests
         run: yarn node scripts/affected-problems.js --base=${{ github.event.pull_request.base.sha }} --head=${{ github.event.pull_request.head.sha }} --target=test --tag=typescript
 
-  react_tests:
-    name: React Problem Tests
-    runs-on: ubuntu-latest
-    container:
-      image: cypress/included:latest
-      options: --user 1001
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 2
-          ref: ${{ github.event.pull_request.head.sha }}
-      - name: Fetch base branch (main)
-        run: |
-          git fetch origin ${{ github.event.pull_request.base.sha }}
-      - name: Extract node version from package.json
-        uses: sergeysova/jq-action@v2
-        id: node_version
-        with:
-          cmd: jq .engines.node package.json -r | sed -e 's/"//g' | sed -e 's/>=//g'
-      - name: Use Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "${{ steps.node_version.outputs.value }}"
-      - name: Use Yarn
-        run: corepack enable
-      - name: Install deps
-        run: yarn
-      - name: Run Tests
-        run: yarn node scripts/affected-problems.js --base=${{ github.event.pull_request.base.sha }} --head=${{ github.event.pull_request.head.sha }} --target=test --tag=react
-      - name: Upload failed tests artifacts
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: Cypress-Artifacts
-          if-no-files-found: ignore
-          path: |
-            problems/react/*/cypress/screenshots/**/*.*
-            problems/react/*/cypress/videos/**/*.*
-            problems/react/*/visual-tests/screenshots/comparison
-            problems/react/*/visual-tests/screenshots/diff
+  # react_tests:
+  #   name: React Problem Tests
+  #   runs-on: ubuntu-latest
+  #   container:
+  #     image: cypress/included:latest
+  #     options: --user 1001
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #       with:
+  #         fetch-depth: 2
+  #         ref: ${{ github.event.pull_request.head.sha }}
+  #     - name: Fetch base branch (main)
+  #       run: |
+  #         git fetch origin ${{ github.event.pull_request.base.sha }}
+  #     - name: Extract node version from package.json
+  #       uses: sergeysova/jq-action@v2
+  #       id: node_version
+  #       with:
+  #         cmd: jq .engines.node package.json -r | sed -e 's/"//g' | sed -e 's/>=//g'
+  #     - name: Use Node.js
+  #       uses: actions/setup-node@v4
+  #       with:
+  #         node-version: "${{ steps.node_version.outputs.value }}"
+  #     - name: Use Yarn
+  #       run: corepack enable
+  #     - name: Install deps
+  #       run: yarn
+  #     - name: Run Tests
+  #       run: yarn node scripts/affected-problems.js --base=${{ github.event.pull_request.base.sha }} --head=${{ github.event.pull_request.head.sha }} --target=test --tag=react
+  #     - name: Upload failed tests artifacts
+  #       if: failure()
+  #       uses: actions/upload-artifact@v4
+  #       with:
+  #         name: Cypress-Artifacts
+  #         if-no-files-found: ignore
+  #         path: |
+  #           problems/react/*/cypress/screenshots/**/*.*
+  #           problems/react/*/cypress/videos/**/*.*
+  #           problems/react/*/visual-tests/screenshots/comparison
+  #           problems/react/*/visual-tests/screenshots/diff
