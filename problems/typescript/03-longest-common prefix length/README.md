@@ -35,8 +35,6 @@ There are 3 pairs `(arr1[i], arr2[j])`:
 
 The longest common prefix is `100` with a length of `3`.
 
----
-
 ### Example 2
 
 **Input:**
@@ -50,8 +48,6 @@ The longest common prefix is `100` with a length of `3`.
 There exists no common prefix for any pair `(arr1[i], arr2[j])`, hence we return `0`.
 
 Note that common prefixes between elements of the same array do not count.
-
----
 
 ## Constraints
 
