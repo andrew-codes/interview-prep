@@ -13394,6 +13394,20 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"typescript-04@workspace:problems/typescript/04-zigzag-iterator":
+  version: 0.0.0-use.local
+  resolution: "typescript-04@workspace:problems/typescript/04-zigzag-iterator"
+  dependencies:
+    "@nx/jest": "npm:21.2.2"
+    "@types/jest": "npm:^29.5.12"
+    "@types/node": "npm:18.16.9"
+    jest: "npm:^29.7.0"
+    jest-environment-node: "npm:^29.7.0"
+    ts-jest: "npm:^29.1.0"
+    typescript: "npm:^5.8.3"
+  languageName: unknown
+  linkType: soft
+
 "typescript-eslint@npm:^8.29.0":
   version: 8.35.1
   resolution: "typescript-eslint@npm:8.35.1"
