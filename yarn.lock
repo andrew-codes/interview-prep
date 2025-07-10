@@ -11612,6 +11612,23 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"react-04@workspace:problems/react/04-modal":
+  version: 0.0.0-use.local
+  resolution: "react-04@workspace:problems/react/04-modal"
+  dependencies:
+    "@types/cypress": "npm:^1.1.6"
+    "@types/react": "npm:^19.1.8"
+    "@types/react-dom": "npm:^19.1.6"
+    "@vitejs/plugin-react": "npm:^4.0.0"
+    cypress: "npm:^14.5.1"
+    cypress-image-diff-js: "npm:^2.4.0"
+    react: "npm:^19.1.0"
+    react-dom: "npm:^19.1.0"
+    typescript: "npm:^5.8.3"
+    vite: "npm:^6.3.5"
+  languageName: unknown
+  linkType: soft
+
 "react-dom@npm:^19.1.0":
   version: 19.1.0
   resolution: "react-dom@npm:19.1.0"
