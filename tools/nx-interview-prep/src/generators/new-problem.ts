@@ -115,15 +115,15 @@ export async function createNewGenerator(tree: Tree, options: NewProblemGenerato
       stdio: "inherit",
     })
 
-    execSync(
-      `git checkout -b ${problemId}; git add .; git commit -m "${options.name} ${problemId} creation"; git push -u origin ${problemId};`,
-      {
-        cwd: tree.root,
-        stdio: "inherit",
-      },
-    )
-
     if (!options.skipGh) {
+      execSync(
+        `git checkout -b ${problemId}; git add .; git commit -m "${options.name} ${problemId} creation"; git push -u origin ${problemId};`,
+        {
+          cwd: tree.root,
+          stdio: "inherit",
+        },
+      )
+
       execSync(
         `gh pr create --title "${options.name} ${problemId}" --body "Problem created for ${options.language} interview preparation." --label "practice problem";`,
         {
