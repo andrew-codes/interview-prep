@@ -1,0 +1,15 @@
+{
+    "name": "<%= problemId %>",
+    "version": "1.0.0",
+    "private": true,
+    "dependencies": {
+      "lit": "^3.0.0"
+    },
+    "devDependencies": {
+      "@types/cypress": "^1.1.6",
+      "cypress": "^14.5.1",
+      "cypress-image-diff-js": "^2.4.0",
+      "typescript": "^5.8.3",
+      "vite": "^6.3.5"
+    }
+}
