@@ -71,6 +71,12 @@ export async function createNewGenerator(tree: Tree, options: NewProblemGenerato
             cwd: "{projectRoot}",
           },
         },
+        "test/update": {
+          executor: "interview-prep:update-visual-regression-baselines",
+          options: {
+            cwd: "{projectRoot}",
+          },
+        },
       }
       break
     case "typescript":
@@ -89,6 +95,12 @@ export async function createNewGenerator(tree: Tree, options: NewProblemGenerato
           outputs: ["{workspaceRoot}/coverage/{projectRoot}"],
           options: {
             jestConfig: "{projectRoot}/jest.config.ts",
+          },
+        },
+        "test/update": {
+          executor: "interview-prep:update-visual-regression-baselines",
+          options: {
+            cwd: "{projectRoot}",
           },
         },
       }
