@@ -6,6 +6,7 @@
       "lit": "^3.0.0"
     },
     "devDependencies": {
+      "@cypress/mount-utils": "^4.1.2",
       "@types/cypress": "^1.1.6",
       "cypress": "^14.5.1",
       "cypress-image-diff-js": "^2.4.0",

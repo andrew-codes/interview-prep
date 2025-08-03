@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/schema",
+  "version": 2,
+  "title": "UpdateVisualRegressionBaselines executor",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "testTarget": {
+      "type": "string",
+      "description": "The target to run for running component tests that produce a visual regression report JSON, e.g., 'test'.",
+      "default": "test"
+    },
+    "cwd": {
+      "type": "string",
+      "description": "The current working directory to run the command in. Defaults to the project root.",
+      "default": "{projectRoot}"
+    }
+  },
+  "required": []
+}

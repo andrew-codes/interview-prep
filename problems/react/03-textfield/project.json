@@ -18,6 +18,12 @@
         "command": "yarn cypress run --component --browser edge",
         "cwd": "{projectRoot}"
       }
+    },
+    "test/update": {
+      "executor": "interview-prep:update-visual-regression-baselines",
+      "options": {
+        "cwd": "{projectRoot}"
+      }
     }
   }
 }
