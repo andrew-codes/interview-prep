@@ -1,11 +1,18 @@
-function* zigzag(v1: Array<number>, v2: Array<number>) {
+function* zigzag(v1: Array<number>, v2: Array<number>): Generator<number> {
   while (v1.length > 0 || v2.length > 0) {
     if (v1.length > 0) {
       const v = v1.shift()
+      if (v === undefined) {
+        continue
+      }
       yield v
     }
+
     if (v2.length > 0) {
       const v = v2.shift()
+      if (v === undefined) {
+        continue
+      }
       yield v
     }
   }
@@ -13,7 +20,7 @@ function* zigzag(v1: Array<number>, v2: Array<number>) {
 
 class ZigzagIterator {
   private iterator: ReturnType<typeof zigzag>
-  private nextValue: IteratorResult<number> | null
+  private nextValue: IteratorResult<number> | null = null
   constructor(v1: number[], v2: number[]) {
     this.iterator = zigzag(v1, v2)
   }

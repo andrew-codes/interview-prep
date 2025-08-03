@@ -22,3 +22,5 @@ node_modules
 problems/react/**/visual-tests/report
 problems/react/**/visual-tests/screenshots/*
 !problems/react/**/visual-tests/screenshots/baseline
+**/cypress/videos
+**/cypress/screenshots

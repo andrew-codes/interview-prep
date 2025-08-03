@@ -27,6 +27,16 @@
           "codeCoverage": true
         }
       }
+    },
+    "start": {
+      "cache": false
+    },
+    "test": {
+      "parallelism": false,
+      "cache": true
+    },
+    "test/update": {
+      "cache": false
     }
   }
 }

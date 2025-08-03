@@ -1,7 +1,7 @@
 import Sut from "./"
 
 describe("zigzag iterator", () => {
-  let output = []
+  let output: Array<number> = []
   beforeEach(() => {
     output = []
   })

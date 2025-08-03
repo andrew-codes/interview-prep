@@ -4,8 +4,7 @@ jest.useFakeTimers()
 
 describe("debounce", () => {
   const mockFn = jest.fn()
-  let fn
-
+  let fn: (...args: any[]) => void
   beforeEach(() => {
     fn = debounce(mockFn, 50)
   })

@@ -3,21 +3,24 @@ const merge = (intervals: Array<[number, number]>) => {
     .sort(([a], [b]) => {
       return a - b
     })
-    .reduce((acc, [start, end], i) => {
-      if (i === 0) {
-        return acc.concat([[start, end]])
-      }
+    .reduce(
+      (acc, [start, end]) => {
+        const lastInterval = acc.pop()
+        if (!lastInterval) {
+          return acc.concat([[start, end]])
+        }
+        const [prevStart, prevEnd] = lastInterval
+        if (start <= prevEnd) {
+          return acc.concat([[prevStart, Math.max(prevEnd, end)]])
+        }
 
-      const [prevStart, prevEnd] = acc.pop()
-      if (start <= prevEnd) {
-        return acc.concat([[prevStart, Math.max(prevEnd, end)]])
-      }
-
-      return acc.concat([
-        [prevStart, prevEnd],
-        [start, end],
-      ])
-    }, [])
+        return acc.concat([
+          [prevStart, prevEnd],
+          [start, end],
+        ])
+      },
+      [] as Array<[number, number]>,
+    )
 }
 
 export default merge

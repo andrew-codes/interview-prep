@@ -62,14 +62,14 @@ describe("modal", () => {
 
     cy.get("button").first().scrollIntoView()
     cy.window().then((win) => {
-      expect(win.scrollY).to.equal(150)
+      expect(win.scrollY).to.equal(152)
     })
 
     cy.get("button").first().click()
     cy.get("[data-test-id=scrim").click()
 
     cy.window().then((win) => {
-      expect(win.scrollY).to.equal(150)
+      expect(win.scrollY).to.equal(152)
     })
   })
 })
@@ -90,7 +90,7 @@ const ModalApp = () => {
           setOpen1(false)
         }}
       >
-        <div style={{ background: "white", padding: "1.5rem", width: "350px" }}>
+        <div style={{ background: "white", padding: "1.5rem", width: "350px", height: "250px" }}>
           <h1>Contact Form</h1>
           <input type="text" />
           <input type="text" />

@@ -1,0 +1,9 @@
+{
+  "executors": {
+    "update-visual-regression-baselines": {
+      "implementation": "./src/executors/update-visual-regression-baselines",
+      "schema": "./src/executors/schema.json",
+      "description": "update-visual-regression-baselines executor"
+    }
+  }
+}

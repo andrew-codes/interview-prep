@@ -1,0 +1,29 @@
+{
+  "name": "web-component-01",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "problems/web-component/01-select/src",
+  "tags": ["ui", "problem"],
+  "targets": {
+    "start": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "yarn cypress open --component --browser edge",
+        "cwd": "{projectRoot}"
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "yarn cypress run --component --browser edge",
+        "cwd": "{projectRoot}"
+      }
+    },
+    "test/update": {
+      "executor": "interview-prep:update-visual-regression-baselines",
+      "options": {
+        "cwd": "{projectRoot}"
+      }
+    }
+  }
+}

@@ -13,7 +13,6 @@ import * as path from "path"
 import { NewProblemGeneratorSchema } from "./schema"
 
 export async function createNewGenerator(tree: Tree, options: NewProblemGeneratorSchema) {
-  console.debug(options)
   try {
     const ghOutput = execSync("gh auth status", {
       cwd: tree.root,
@@ -32,7 +31,8 @@ export async function createNewGenerator(tree: Tree, options: NewProblemGenerato
       )
     }
   }
-  const projectRootPrefix = path.join("problems", options.language)
+  const projectDirParent = options.language.replaceAll(" ", "-")
+  const projectRootPrefix = path.join("problems", projectDirParent)
   await fs.mkdir(projectRootPrefix, { recursive: true })
 
   const lastProblemPrefix =
@@ -46,7 +46,7 @@ export async function createNewGenerator(tree: Tree, options: NewProblemGenerato
       ?.split("-")?.[0] || "00"
   const nextProblemNumber = String(parseInt(lastProblemPrefix, 10) + 1).padStart(2, "0")
 
-  const problemId = `${options.language}-${nextProblemNumber}`
+  const problemId = `${projectDirParent}-${nextProblemNumber}`
   const projectRoot = path.join(
     projectRootPrefix,
     `${nextProblemNumber}-${options.name.replace(" ", "-")}`,
@@ -54,6 +54,7 @@ export async function createNewGenerator(tree: Tree, options: NewProblemGenerato
 
   let targets = {}
   switch (options.language) {
+    case "web component":
     case "react":
       targets = {
         start: {
@@ -67,6 +68,12 @@ export async function createNewGenerator(tree: Tree, options: NewProblemGenerato
           executor: "nx:run-commands",
           options: {
             command: "yarn cypress run --component --browser edge",
+            cwd: "{projectRoot}",
+          },
+        },
+        "test/update": {
+          executor: "interview-prep:update-visual-regression-baselines",
+          options: {
             cwd: "{projectRoot}",
           },
         },
@@ -90,6 +97,12 @@ export async function createNewGenerator(tree: Tree, options: NewProblemGenerato
             jestConfig: "{projectRoot}/jest.config.ts",
           },
         },
+        "test/update": {
+          executor: "interview-prep:update-visual-regression-baselines",
+          options: {
+            cwd: "{projectRoot}",
+          },
+        },
       }
       break
   }
@@ -98,10 +111,10 @@ export async function createNewGenerator(tree: Tree, options: NewProblemGenerato
     root: projectRoot,
     projectType: "library",
     sourceRoot: path.join(projectRoot, "src"),
-    tags: [options.language, "problem"],
+    tags: [projectDirParent, "problem"],
     targets,
   })
-  generateFiles(tree, path.join(__dirname, `${options.language}-problem-files`), projectRoot, {
+  generateFiles(tree, path.join(__dirname, `${projectDirParent}-problem-files`), projectRoot, {
     ...options,
     problemId,
     pathToRoot: path.relative(projectRoot, tree.root),
