@@ -90,7 +90,7 @@ const ModalApp = () => {
           setOpen1(false)
         }}
       >
-        <div style={{ background: "white", padding: "1.5rem", width: "350px" }}>
+        <div style={{ background: "white", padding: "1.5rem", width: "350px", height: "250px" }}>
           <h1>Contact Form</h1>
           <input type="text" />
           <input type="text" />

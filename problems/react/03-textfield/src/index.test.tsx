@@ -20,10 +20,10 @@ describe("textfield", () => {
     cy.mount(
       <div data-test-id="capture">
         <TextField />
-        <div style={{ display: "inline-block" }}>
+        <div style={{ display: "inline-block", width: "50%" }}>
           <TextField />
         </div>
-        <div style={{ display: "inline-block" }}>
+        <div style={{ display: "inline-block", width: "50%" }}>
           <TextField />
         </div>
       </div>,
