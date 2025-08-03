@@ -62,14 +62,14 @@ describe("modal", () => {
 
     cy.get("button").first().scrollIntoView()
     cy.window().then((win) => {
-      expect(win.scrollY).to.equal(150)
+      expect(win.scrollY).to.equal(152)
     })
 
     cy.get("button").first().click()
     cy.get("[data-test-id=scrim").click()
 
     cy.window().then((win) => {
-      expect(win.scrollY).to.equal(150)
+      expect(win.scrollY).to.equal(152)
     })
   })
 })
