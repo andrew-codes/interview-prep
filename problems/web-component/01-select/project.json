@@ -3,7 +3,7 @@
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
   "sourceRoot": "problems/web-component/01-select/src",
-  "tags": ["web-component", "problem"],
+  "tags": ["ui", "problem"],
   "targets": {
     "start": {
       "executor": "nx:run-commands",

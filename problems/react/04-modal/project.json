@@ -3,7 +3,7 @@
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
   "sourceRoot": "problems/react/04-modal/src",
-  "tags": ["react", "problem"],
+  "tags": ["ui", "problem"],
   "targets": {
     "start": {
       "executor": "nx:run-commands",
