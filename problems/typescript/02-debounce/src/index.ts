@@ -3,9 +3,9 @@ interface F {
 }
 
 const debounce = (fn: F, t: number) => {
-  let timeoutId
+  let timeoutId: ReturnType<typeof setTimeout> | undefined
 
-  return (...args) => {
+  return (...args: any[]) => {
     clearTimeout(timeoutId)
     timeoutId = setTimeout(fn, t, ...args)
   }
