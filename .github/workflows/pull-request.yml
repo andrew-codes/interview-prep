@@ -14,7 +14,7 @@ jobs:
     name: TypeScript Problem Tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 2
           ref: ${{ github.event.pull_request.head.sha }}
@@ -44,7 +44,7 @@ jobs:
       image: cypress/included:latest
       options: --user 1001
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 2
           ref: ${{ github.event.pull_request.head.sha }}
