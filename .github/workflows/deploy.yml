@@ -18,14 +18,14 @@ jobs:
   build:
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         id: checkout
         with:
           submodules: true
           fetch-depth: 0
       - name: Install d2
         run: curl -fsSL https://d2lang.com/install.sh | sh -s --
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
       - name: Yarn version
@@ -35,7 +35,7 @@ jobs:
       - name: Build Quartz
         run: yarn nx build docs
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: apps/docs/public
 
