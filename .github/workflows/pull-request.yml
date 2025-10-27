@@ -14,7 +14,7 @@ jobs:
     name: TypeScript Problem Tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 2
           ref: ${{ github.event.pull_request.head.sha }}
@@ -27,7 +27,7 @@ jobs:
         with:
           cmd: jq .engines.node package.json -r | sed -e 's/"//g' | sed -e 's/>=//g'
       - name: Use Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: "${{ steps.node_version.outputs.value }}"
       - name: Use Yarn
@@ -44,7 +44,7 @@ jobs:
       image: cypress/included:latest
       options: --user 1001
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 2
           ref: ${{ github.event.pull_request.head.sha }}
@@ -57,7 +57,7 @@ jobs:
         with:
           cmd: jq .engines.node package.json -r | sed -e 's/"//g' | sed -e 's/>=//g'
       - name: Use Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: "${{ steps.node_version.outputs.value }}"
       - name: Use Yarn
@@ -68,7 +68,7 @@ jobs:
         run: yarn node scripts/affected-problems.js --base=${{ github.event.pull_request.base.sha }} --head=${{ github.event.pull_request.head.sha }} --target=test --tag=ui
       - name: Upload failed tests artifacts
         if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: Cypress-Artifacts
           if-no-files-found: ignore
