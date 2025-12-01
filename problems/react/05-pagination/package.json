@@ -3,19 +3,19 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
   },
   "devDependencies": {
     "@types/cypress": "^1.1.6",
-    "@types/react": "^19.1.8",
-    "@types/react-dom": "^19.1.6",
-    "@vitejs/plugin-react": "^4.0.0",
-    "cypress": "^14.5.1",
-    "cypress-cdp": "^1.6.82",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "cypress": "^15.7.0",
+    "cypress-cdp": "^1.6.87",
     "cypress-image-diff-html-report": "^2.2.0",
-    "cypress-image-diff-js": "^2.4.0",
-    "typescript": "^5.8.3",
-    "vite": "^6.3.5"
+    "cypress-image-diff-js": "^2.5.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.6"
   }
 }
